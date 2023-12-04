@@ -6,8 +6,8 @@ module.exports = {
         events: [
           {
             http: {
-                method: 'GET',
-                path: '/'
+                method: 'ANY',
+                path: '/(.*)'
             },
           },
           {
