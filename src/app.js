@@ -1,3 +1,4 @@
+const cors = require('cors');
 const express = require("express")
 const mongoose = require("mongoose")
 const userRoute = require("./routes/userRoutes")
@@ -8,6 +9,8 @@ const port = process.env.PORT || 3001
 const app = express()
 
 const DB_CONNECTION_STRING = "mongodb+srv://admin:EAiTTU4Y4DWz99yU@cluster0.sa8fxfy.mongodb.net/f2023_comp3123?retryWrites=true&w=majority"
+
+app.use(cors())
 
 app.use(express.json())
 app.use(express.urlencoded())
