@@ -7,12 +7,10 @@ const port = process.env.PORT || 3001
 
 const app = express()
 
-const DB_CONNECTION_STRING = "mongodb+srv://admin:EAiTTU4Y4DWz99yU@cluster0.sa8fxfy.mongodb.net/f2023_comp3123?retryWrites=true&w=majority"
-
 app.use(express.json())
 app.use(express.urlencoded())
 
-mongoose.connect(DB_CONNECTION_STRING, {
+mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
