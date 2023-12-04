@@ -27,7 +27,7 @@ exports.createEmployee = async (req, res) => {
 // Get Employee by _ID
 exports.getEmployeeById = async (req, res) => {
     try{
-        const emp = await Employee.findById(req.params.eid)
+        const emp = await Employee.findById(req.params.id)
         if(emp){
             console.log("Employee found: " + emp)
             res.status(200).send(emp)
@@ -50,7 +50,7 @@ exports.updateEmployeeById = async (req, res) => {
         }
 
         const updatedEmployee = await Employee.findOneAndUpdate(
-            { _id: req.params.eid },
+            { _id: req.params.id },
             updatedEmployeeData,
             { new: true }
         )
@@ -78,7 +78,7 @@ exports.updateEmployeeById = async (req, res) => {
 
 exports.deleteEmployeeById = async (req, res) => {
     try {
-        employee = await Employee.findOneAndDelete(req.params.eid)
+        employee = await Employee.findOneAndDelete(req.params.id)
         if (!employee) {
             res.status(404).send({
                 "status": false,
