@@ -6,6 +6,12 @@ module.exports = {
         events: [
           {
             http: {
+                method: 'GET',
+                path: '/'
+            },
+          },
+          {
+            http: {
               method: 'GET',
               path: '/api/v1/emp/employees',
             },
