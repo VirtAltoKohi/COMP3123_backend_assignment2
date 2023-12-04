@@ -29,4 +29,6 @@ app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 })
 
-module.export = app;
+module.export = {
+    handler: app,
+};
